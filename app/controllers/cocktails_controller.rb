@@ -14,6 +14,8 @@ class CocktailsController < ApplicationController
   end
 
   def edit
+    @cocktail = Cocktail.find(params[:id])
+
   end
 
   def update
@@ -36,6 +38,6 @@ class CocktailsController < ApplicationController
 
   private
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :background_link)
   end
 end

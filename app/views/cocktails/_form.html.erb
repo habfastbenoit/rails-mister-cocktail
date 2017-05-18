@@ -1,8 +1,12 @@
-<%= simple_form_for(@dose) do |f| %>
+<%= simple_form_for(@cocktail) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :background_link %>
   </div>
 
   <div class="form-actions">
@@ -10,5 +14,3 @@
   </div>
 <% end %>
 
-
-<%= link_to 'Cocktail list', cocktails_path %>

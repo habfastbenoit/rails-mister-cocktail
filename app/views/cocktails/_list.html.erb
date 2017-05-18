@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-<h1 class="text-center">My Cocktails</h1>
+<h1  style="margin-bottom: 35px" class="text-center">My Cocktails</h1>
 
 <table class="table table-stripet">
   <thead>
@@ -19,7 +19,7 @@
       <tr>
         <td><%= cocktail.name %></td>
         <td><%= link_to 'Show', cocktail %></td>
-        <td>TO DO</td>
+        <td><%= cocktail.ingredients.count %></td>
         <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
         <td><%= link_to 'Remove', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
 
@@ -30,5 +30,4 @@
 
 <br>
 
-<%= link_to 'New Cocktail', new_cocktail_path %>
 </div>
