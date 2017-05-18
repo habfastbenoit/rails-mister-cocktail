@@ -24,5 +24,5 @@ ingredients_attributes = [
     name:         "mint leaves",
   }
 ]
-Restaurant.create!(ingredients_attributes)
+Ingredient.create!(ingredients_attributes)
 puts 'Finished!'

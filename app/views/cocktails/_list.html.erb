@@ -7,9 +7,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Address</th>
-      <th>Category</th>
-      <th>Phone Number</th>
+      <th>Description</th>
+
+      <th>Ingredients N.</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +19,9 @@
       <tr>
         <td><%= cocktail.name %></td>
         <td><%= link_to 'Show', cocktail %></td>
+        <td>TO DO</td>
         <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <td><%= link_to 'see reviews', review_path(cocktail) %></td>
-        <td><%= link_to 'add review', new_cocktail_review_path(cocktail) %></td>
+        <td><%= link_to 'Remove', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
 
       </tr>
     <% end %>

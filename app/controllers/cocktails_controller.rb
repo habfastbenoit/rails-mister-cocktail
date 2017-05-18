@@ -20,9 +20,18 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @cocktail = Cocktail.find(params[:id])
+
+    @doses = @cocktail.doses
   end
 
-  def delete
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    respond_to do |format|
+      format.html { redirect_to @cocktail, notice: 'Cocktail was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
