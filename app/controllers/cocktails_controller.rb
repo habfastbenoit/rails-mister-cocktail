@@ -9,8 +9,16 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
-    redirect_to cocktail_path(@cocktail)
+    respond_to do |format|
+      if @cocktail.save
+        format.html { redirect_to cocktail_path(@cocktail), notice: 'New cocktail was created' }
+        format.json { render :show, status: :created, location: @cocktail }
+      else
+        format.html { render :new }
+        format.json { render json: @cocktail.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   def edit
@@ -23,8 +31,10 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
-
+    @ingredients = Ingredient.all
+    @dose = Dose.new
     @doses = @cocktail.doses
+
   end
 
   def destroy
@@ -38,6 +48,6 @@ class CocktailsController < ApplicationController
 
   private
   def cocktail_params
-    params.require(:cocktail).permit(:name, :background_link)
+    params.require(:cocktail).permit(:name, :background_link, :cocktailbanner, :cocktailbanner_cache)
   end
 end

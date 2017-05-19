@@ -1,2 +1,12 @@
-<%= render 'list' %>
 
+<div class="container">
+
+<h1  style="margin-bottom: 35px" class="text-center">My Cocktails</h1>
+
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <%= render 'card', c: cocktail %>
+    <% end %>
+  </div>
+</div>
