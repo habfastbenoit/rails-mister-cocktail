@@ -1,25 +1,42 @@
-#ingredient-form-col {
-  padding-top: 20px;
-  padding-left: 120px;
-  padding-right: 70px;
-}
 
-#ingredient-form-col h5 {
-  margin-bottom: 25px;
-  text-align: left;
-}
 
 #ingredient-table-col {
-  padding-top : 45px;
+  width: auto;
+  border: 1px solid lightgrey;
+
+
 }
 
+#ingredient-form-col {
+  width: auto;
+  text-align: left;
+  border: 1px solid lightgrey;
+
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-around;
+}
 
 .info-wrapper {
+
+  padding-top: 25px;
   border-top: 1px solid grey;
-  padding-top: 30px;
+
   margin-bottom: 30px;
 }
 
 h1 {
   margin-bottom: 5px;
+}
+
+.thin-text-link {
+  text-decoration: none;
+  color: lightblue;
+  text-weight: lighter;
+}
+
+#btn-add-dose {
+  margin-bottom: 20px;
 }
